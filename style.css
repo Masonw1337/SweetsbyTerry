@@ -140,14 +140,15 @@ th {
     width: max-content; 
     flex-direction: row;        /* Ensures it stays a row */
     flex-wrap: nowrap;          /* Prevents images from wrapping to the next line */
-    animation: scrolling 30s linear infinite; 
+    animation: scrolling 40s linear infinite; 
 }
 
 /* Styling for individual images */
 .marquee-content img {
-    height: 250px; /* Uniform height for all images */
+    height: 300px; /* Uniform height for all images */
     width: auto;
     margin: 0 0px;
+    display: block:
     border-radius: 5px;
     /* Optional: Prevents images from stretching during animation */
     flex-shrink: 0; 
@@ -156,7 +157,7 @@ th {
 /* Keyframes define the animation: move from right (0%) to left (-100%) */
 @keyframes scrolling {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+    100% { transform: translateX(-50%); }
 }
 
 /* Optional: Pause animation when user hovers over the images */
