@@ -13,7 +13,7 @@
     <h1>
 <img src="logo/logo.jpg" alt="Beautiful logo">    
     </h1>
-
+    
   <div class="marquee-container">
     <div class="marquee-content">
 <img src="cake/1.jpg" alt="Beautiful Cake 1">
@@ -65,49 +65,6 @@
 <img src="cake/23.jpg" alt="Beautiful Cake 23">
     </div>
 </div>
-
     <p>This is practice.</p>
-
-    <script>
-// Get the modal elements
-var modal = document.getElementById("imageModal");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-
-// Get all images in your marquee
-var images = document.querySelectorAll('.marquee-content img');
-
-// Loop through all images and add a click listener
-images.forEach(img => {
-    img.onclick = function(){
-        modal.style.display = "block";
-        modalImg.src = this.src; // Set the large image source to the clicked image source
-        captionText.innerHTML = this.alt; // Use the 'alt' text as a caption
-    }
-});
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
-}
-
-// Optional: Close the modal if the user clicks the dark background
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
-
-<div id="imageModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img01">
-  <div id="caption"></div>
-</div>
-
 </body>
 </html>
