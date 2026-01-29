@@ -125,42 +125,36 @@ th {
     color: white;
 }
 
-/* Container for the scrolling effect */
 .marquee-container {
     width: 100%;
-    overflow: hidden; /* Hides the images when they are outside the container */
+    overflow: hidden;
     background: #fff;
     padding: 10px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* The element that actually moves */
 .marquee-content {
     display: flex;
     width: max-content; 
-    flex-direction: row;        /* Ensures it stays a row */
-    flex-wrap: nowrap;          /* Prevents images from wrapping to the next line */
+    flex-direction: row;
+    flex-wrap: nowrap;
     animation: scrolling 40s linear infinite; 
 }
 
-/* Styling for individual images */
 .marquee-content img {
-    height: 300px; /* Uniform height for all images */
+    height: 300px;
     width: auto;
     margin: 0 0px;
     display: block:
     border-radius: 5px;
-    /* Optional: Prevents images from stretching during animation */
     flex-shrink: 0; 
 }
 
-/* Keyframes define the animation: move from right (0%) to left (-100%) */
 @keyframes scrolling {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
 
-/* Optional: Pause animation when user hovers over the images */
 .marquee-container:hover .marquee-content {
     animation-play-state: paused;
 }
@@ -184,36 +178,31 @@ th {
     }
 }
 
-/* --- Lightbox Modal Styles --- */
-
-/* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top of everything */
-    padding-top: 50px; /* Location of the box */
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
 }
 
-/* Modal Content (the image) */
 .modal-content {
     margin: auto;
     display: block;
     width: 80%;
-    max-width: 800px; /* Max width for larger screens */
-    max-height: 90vh; /* Don't be taller than the screen */
+    max-width: 800px;
+    max-height: 90vh;
     object-fit: contain;
     animation-name: zoom;
     animation-duration: 0.3s;
 }
 
-/* The Close Button */
 .close {
     position: absolute;
     top: 15px;
@@ -233,7 +222,6 @@ th {
     cursor: pointer;
 }
 
-/* Add a cursor pointer to the marquee images so users know they are clickable */
 .marquee-content img {
     cursor: pointer;
 }
