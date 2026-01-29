@@ -15,23 +15,23 @@
     <form action="https://formspree.io" method="POST" enctype="multipart/form-data">
         
         <label for="name">Full Name:</label>
-        <input type="text" id="name" name="customer_name" required>
+        <input type="text" id="name" name="customer_name" required aria-describedby="First and Last Name">
 
         <label for="flavor">Choose Flavor:</label>
-        <select id="flavor" name="cake_flavor">
+        <select id="flavor" name="cake_flavor" aria-describedby="Vanilla, Chocolate, Red Velvet" required>
             <option value="vanilla">Classic Vanilla</option>
             <option value="chocolate">Rich Chocolate</option>
             <option value="red-velvet">Red Velvet</option>
         </select>
 
         <label for="date">Preferred Pickup Date:</label>
-        <input type="date" id="date" name="pickup_date" required>
+        <input type="date" id="date" name="pickup_date" required aria-describedby="Pickup date for the Cake">
 
         <label for="photo">Upload Inspiration Image:</label>
-        <input type="file" id="photo" name="cake_inspiration" accept="image/*">
+        <input type="file" id="photo" name="cake_inspiration" accept="image/*" aria-describedby="Upload an Inspiration Image">
 
         <label for="notes">Special Instructions:</label>
-        <textarea id="notes" name="extra_details" rows="4"></textarea>
+        <textarea id="notes" name="extra_details" rows="4" aria-describedby="Special instructions for the Cake"></textarea>
 
         <button type="submit"><strong>Submit Order</strong></button>
         <p><a href="index.html"><strong>Back to Home</strong></a></p>
