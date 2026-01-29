@@ -73,35 +73,29 @@
 </div>
 
 <script>
-  // Get the modal elements
   var modal = document.getElementById("imageModal");
   var modalImg = document.getElementById("img01");
   var closeBtn = document.getElementsByClassName("close")[0];
   var marqueeContent = document.querySelector(".marquee-content");
 
-  // Get all images in the marquee and add click listeners
   var images = document.querySelectorAll(".marquee-content img");
   images.forEach(function(img) {
       img.onclick = function(){
           modal.style.display = "block";
           modalImg.src = this.src;
-          // Pause scrolling when modal is open
           marqueeContent.style.animationPlayState = "paused"; 
       }
   });
 
-  // Close the modal when clicking the 'x'
   closeBtn.onclick = function() {
       modal.style.display = "none";
-      // CLEAR the inline style so the CSS hover effect works again
       marqueeContent.style.animationPlayState = ""; 
   }
 
-  // Close the modal when clicking outside the image
+
   window.onclick = function(event) {
       if (event.target == modal) {
           modal.style.display = "none";
-          // CLEAR the inline style so the CSS hover effect works again
           marqueeContent.style.animationPlayState = ""; 
       }
   }
