@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding-top: 100px; color: #333; }
+      .card { max-width: 400px; margin: 0 auto; padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 5px solid #ffb6c1; }
+      h1 { color: #d81b60; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Sweet Success!</h1>
+      <p>Your order has been sent to Terry.</p>
+      <p>Redirecting you home in a moment...</p>
+      <small>If nothing happens, <a href="<?= homeUrl ?>">click here</a>.</small>
+    </div>
+
+    <script>
+      // The <?= homeUrl ?> is the variable we passed from Code.gs
+      setTimeout(function() {
+        window.top.location.href = "<?= homeUrl ?>";
+      }, 3000);
+    </script>
+  </body>
+</html>

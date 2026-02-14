@@ -12,7 +12,49 @@
     <link rel="stylesheet" href="style.css">
     <title>Testimonials | Sweets by Terry</title>
 </head>
+
 <body>
+<h1>What People Are Saying</h1>
+    
+    <div id="testimonial-feed" class="im-feed">
+        <p>Loading sweet reviews...</p>
+    </div>
+
+    <h1>Leave a Review</h1>
+    <form action="https://script.google.com/macros/s/AKfycbycp0nH4mv389KmJ_UznhY2fL6k46xjT1txtaIM9oPRLdt13osIOKa5LhtMovYjM_D9/exec" method="POST">
+        </form>
+
+    <script>
+        const FEED_URL = "https://script.google.com/macros/s/AKfycbycp0nH4mv389KmJ_UznhY2fL6k46xjT1txtaIM9oPRLdt13osIOKa5LhtMovYjM_D9/exec";
+
+        async function loadTestimonials() {
+            try {
+                const response = await fetch(FEED_URL);
+                const reviews = await response.json();
+                const container = document.getElementById('testimonial-feed');
+                container.innerHTML = ''; // Clear loading text
+
+                // Shuffle and pick 5 random reviews
+                const randomReviews = reviews.sort(() => 0.5 - Math.random()).slice(0, 5);
+
+                randomReviews.forEach(rev => {
+                    const bubble = document.createElement('div');
+                    bubble.className = 'im-bubble';
+                    bubble.innerHTML = `
+                        <strong>${rev.reviewer_name}</strong>
+                        <div class="stars">${'⭐'.repeat(rev.star_rating)}</div>
+                        <p>${rev.review_text}</p>
+                    `;
+                    container.appendChild(bubble);
+                });
+            } catch (error) {
+                console.error("Error loading reviews:", error);
+            }
+        }
+
+        window.onload = loadTestimonials;
+    </script>
+    
     <h1>Leave a Review</h1>
     
     <form action="https://script.google.com/macros/s/AKfycbycp0nH4mv389KmJ_UznhY2fL6k46xjT1txtaIM9oPRLdt13osIOKa5LhtMovYjM_D9/exec" method="POST">
