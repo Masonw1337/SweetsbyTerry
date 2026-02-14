@@ -1,0 +1,42 @@
+<html lang="en">
+<nav>
+  <a href="index.html">Home</a>
+  <a href="order.html">Order a Cake</a>
+  <a href="aboutme.html">About Me</a>
+  <a href="admin.html">Admin</a>
+  <a href="Testimonials.html">Testimonials</a>
+</nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Reviews | Sweets by Terry</title>
+</head>
+<body>
+    <h1>Leave a Review</h1>
+    
+    <form action="https://script.google.com/macros/s/AKfycbycp0nH4mv389KmJ_UznhY2fL6k46xjT1txtaIM9oPRLdt13osIOKa5LhtMovYjM_D9/exec" method="POST">
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="reviewer_name" required aria-describedby="Your Name">
+
+        <label for="rating">Star Rating:</label>
+        <select id="rating" name="star_rating" required>
+            <option value="5">⭐⭐⭐⭐⭐ (5 Stars)</option>
+            <option value="4">⭐⭐⭐⭐ (4 Stars)</option>
+            <option value="3">⭐⭐⭐ (3 Stars)</option>
+            <option value="2">⭐⭐ (2 Stars)</option>
+            <option value="1">⭐ (1 Star)</option>
+        </select>
+
+        <label for="review">Review:</label>
+        <textarea id="review" name="review_text" rows="5" required aria-describedby="Your Review"></textarea>
+
+        <label for="photo">Upload Image:</label>
+        <input type="file" id="photo" name="review_image" accept="image/*" aria-describedby="Upload an Image">
+
+        <button type="submit"><strong>Submit Review</strong></button>
+        <p><a href="index.html"><strong>Back to Home</strong></a></p>
+    </form>
+</body>
+</html>
